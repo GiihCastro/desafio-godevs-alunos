@@ -1,6 +1,6 @@
 # Sistema de Acompanhamento de Alunos
 
-![Preview](link-para-a-imagem-de-preview) 
+![Preview](arquivos/preview.png) 
 
 ## Descrição
 
