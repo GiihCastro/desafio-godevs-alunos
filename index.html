@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Acompanhamento de Alunos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Sistema de Acompanhamento de Alunos</h1>
+        <button id="newClassBtn" aria-label="Adicionar nova turma">+ Nova Turma</button>
+    </header>
+
+    <main class="content">
+        <aside class="classes-list">
+            <h2>Turmas</h2>
+            <ul id="classList"></ul>
+        </aside>
+
+        <section class="class-details">
+            <h2 id="currentClass"></h2>
+            <div class="class-stats">
+                <span id="studentCount" class="stat"></span>
+                <span id="lateCount" class="stat"></span>
+                <span id="difficultyCount" class="stat"></span>
+                <span id="classLessons" class="stat"></span>
+            </div>
+
+            <div class="tab-container">
+                <button class="tab active" data-tab="students">Alunos</button>
+                <button class="tab" data-tab="lessons">Aulas</button>
+            </div>
+
+            <div id="studentsTab" class="tab-content active">
+                <button id="addStudentBtn" class="add-student-btn">+ Adicionar Aluno</button>
+                <ul id="studentList"></ul>
+            </div>
+
+            <div id="lessonsTab" class="tab-content">
+                <ul id="lessonList"></ul>
+            </div>
+        </section>
+    </main>
+
+    <div id="addClassModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close" aria-label="Fechar modal">&times;</button>
+            <h2>Adicionar Nova Turma</h2>
+            <form id="addClassForm">
+                <label for="className">Nome da Turma:</label>
+                <input type="text" id="className" required>
+                <label for="numeroDeAulas">Número de Aulas:</label>
+                <select id="numeroDeAulas" required>
+                    <option value="4">4 aulas</option>
+                    <option value="8">8 aulas</option>
+                    <option value="12">12 aulas</option>
+                    <option value="18">18 aulas</option>
+                </select>
+                <button type="submit">Adicionar Turma</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="addStudentModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close" aria-label="Fechar modal">&times;</button>
+            <h2>Adicionar Novo Aluno</h2>
+            <form id="addStudentForm">
+                <label for="studentName">Nome do Aluno:</label>
+                <input type="text" id="studentName" required>
+                <label for="studentIssue">Problema (opcional):</label>
+                <input type="text" id="studentIssue">
+                <button type="submit">Adicionar Aluno</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="editStudentModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close" aria-label="Fechar modal">&times;</button>
+            <h2>Editar Aluno</h2>
+            <form id="editStudentForm">
+                <label for="editStudentName">Nome do Aluno:</label>
+                <input type="text" id="editStudentName" required>
+                <label for="editStudentIssue">Problema (opcional):</label>
+                <input type="text" id="editStudentIssue">
+                <button type="submit">Salvar Aluno</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="editLessonModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close" aria-label="Fechar modal">&times;</button>
+            <h2>Editar Aula</h2>
+            <form id="editLessonForm">
+                <label for="lessonTitle">Título da Aula:</label>
+                <input type="text" id="lessonTitle" required>
+                <label for="lessonObservation">Observação:</label>
+                <textarea id="lessonObservation" rows="3"></textarea>
+                <button type="submit">Salvar Aula</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
